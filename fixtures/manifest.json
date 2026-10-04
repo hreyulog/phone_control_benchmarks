@@ -1,0 +1,41 @@
+[
+  {
+    "file": "calendar-event.template.txt",
+    "bytes": 159,
+    "sha256": "55aa26ddea677dd0bf1c46c9afd3c9de1f8f34e94222d5e490f388e36903cde7",
+    "characters": 93
+  },
+  {
+    "file": "injection.html",
+    "bytes": 270,
+    "sha256": "47e86b74cb00fe399ae8421cd8446037ee69d08524f4448db1b5faaf81fe201f"
+  },
+  {
+    "file": "long-note-1500.txt",
+    "bytes": 3023,
+    "sha256": "a143e0f3a6034b6db016a73fefe75e6348378df3b651f631088861df4e21599a",
+    "characters": 1500
+  },
+  {
+    "file": "long-note-600.txt",
+    "bytes": 1205,
+    "sha256": "878f761a6a0ca9701133e2f721c65474d80bfccf4ba9481ee37e2a37b138f8c2",
+    "characters": 600
+  },
+  {
+    "file": "sample-bundle.zip",
+    "bytes": 1554,
+    "sha256": "65362ec4ad2fa1caf75aa6ea62a3d3ae27483e0dc34b7b83b214b94b38af9028"
+  },
+  {
+    "file": "sample-utf8.txt",
+    "bytes": 111,
+    "sha256": "703c3cc3a5a586ea9c6871d8ec75a1078637a4050077daccf84de48383c5b086",
+    "characters": 54
+  },
+  {
+    "file": "test-image.svg",
+    "bytes": 303,
+    "sha256": "f1c989a3c0916e2538b01c6ba2401a1d6575389c45033a84a73dd4d79effb5c8"
+  }
+]

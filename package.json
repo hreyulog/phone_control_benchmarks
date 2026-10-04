@@ -1,0 +1,13 @@
+{
+  "name": "benchmarks4phone-control-tasks",
+  "version": "1.0.0",
+  "private": true,
+  "description": "100 evidence-backed phone-control scenarios, portable agent handoff and scoring",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "doctor": "node bin/bench.cjs doctor",
+    "validate": "node bin/bench.cjs validate",
+    "test": "node --test tests/*.test.cjs",
+    "preview": "node bin/bench.cjs preview"
+  }
+}

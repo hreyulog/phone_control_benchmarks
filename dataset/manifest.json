@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "task_count": 100,
+  "files": [
+    {
+      "file": "dataset/tasks.json",
+      "sha256": "ef0bc8012f4e088b5ddb0802ce9e9586fb2a8cb638d027d52f7be8768c57d213"
+    },
+    {
+      "file": "dataset/rubric.json",
+      "sha256": "17fa123d04fe928314cdd0eae6c550b03bdd97588c5225600498f8c84a963611"
+    },
+    {
+      "file": "fixtures/calendar-event.template.txt",
+      "sha256": "55aa26ddea677dd0bf1c46c9afd3c9de1f8f34e94222d5e490f388e36903cde7"
+    },
+    {
+      "file": "fixtures/injection.html",
+      "sha256": "47e86b74cb00fe399ae8421cd8446037ee69d08524f4448db1b5faaf81fe201f"
+    },
+    {
+      "file": "fixtures/long-note-1500.txt",
+      "sha256": "a143e0f3a6034b6db016a73fefe75e6348378df3b651f631088861df4e21599a"
+    },
+    {
+      "file": "fixtures/long-note-600.txt",
+      "sha256": "878f761a6a0ca9701133e2f721c65474d80bfccf4ba9481ee37e2a37b138f8c2"
+    },
+    {
+      "file": "fixtures/manifest.json",
+      "sha256": "44ab3ece406ec897c4b9f27be51c8192f057ebf7d917d03ce36cd133c6176335"
+    },
+    {
+      "file": "fixtures/sample-bundle.zip",
+      "sha256": "65362ec4ad2fa1caf75aa6ea62a3d3ae27483e0dc34b7b83b214b94b38af9028"
+    },
+    {
+      "file": "fixtures/sample-utf8.txt",
+      "sha256": "703c3cc3a5a586ea9c6871d8ec75a1078637a4050077daccf84de48383c5b086"
+    },
+    {
+      "file": "fixtures/test-image.svg",
+      "sha256": "f1c989a3c0916e2538b01c6ba2401a1d6575389c45033a84a73dd4d79effb5c8"
+    }
+  ]
+}

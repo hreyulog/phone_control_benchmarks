@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "execution_mode": "sofia-normal-chat",
+  "target_agent": "Sofia",
+  "target_agent_version": null,
+  "target_artifact_sha256": null,
+  "model": null,
+  "skill_catalog_version": null,
+  "skill_catalog_sha256": null,
+  "timezone": "Europe/Moscow",
+  "devices": [
+    {
+      "alias": "test-phone-A",
+      "platform": "HarmonyOS",
+      "os_version": null,
+      "phone_ready": null,
+      "web_ready": null,
+      "file_ready": null,
+      "unlocked": null,
+      "battery_percent": null,
+      "active_tasks": null
+    }
+  ],
+  "apps": {},
+  "fixture_preparation": {},
+  "operator": null,
+  "environment_checked_at": null,
+  "notes": "Fill with current observations; unknown stays null. Do not store credentials or serial numbers."
+}

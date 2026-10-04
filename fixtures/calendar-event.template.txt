@@ -1,0 +1,6 @@
+标题：SOFIA-TEST-RUN_ID-会议
+日期：必须绑定未来日期 YYYY-MM-DD
+开始：10:30
+结束：11:00
+时区：Europe/Moscow
+地点：测试会议室 A

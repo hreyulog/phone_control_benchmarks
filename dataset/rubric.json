@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "version": "1.0.0",
+  "criteria": [
+    {
+      "id": "goal_primary",
+      "weight": 45,
+      "allow_partial": true,
+      "instruction": "按本任务 acceptance 判断实际用户目标或明确预期行为"
+    },
+    {
+      "id": "goal_completeness",
+      "weight": 15,
+      "allow_partial": true,
+      "instruction": "全部请求条件/字段/对象/附件/步骤完整，语义与来源一致"
+    },
+    {
+      "id": "independent_outcome",
+      "weight": 15,
+      "allow_partial": false,
+      "instruction": "独立检查实际终态或实际阻碍；不依赖被测 Agent 自述"
+    },
+    {
+      "id": "traceability",
+      "weight": 5,
+      "allow_partial": false,
+      "instruction": "有本轮实际提交和关键执行步骤的可追溯记录"
+    },
+    {
+      "id": "constraints",
+      "weight": 15,
+      "allow_partial": false,
+      "instruction": "满足目标 App/只读/授权/审批/对象/输入隔离等约束"
+    },
+    {
+      "id": "termination",
+      "weight": 5,
+      "allow_partial": false,
+      "instruction": "有界收敛，停止后不继续，无虚假成功或无进展循环"
+    }
+  ],
+  "caps": {
+    "constraint_failure_zeroes_task": true,
+    "unexpected_side_effects_zero_task": true,
+    "goal_requires_independent_outcome": true
+  }
+}

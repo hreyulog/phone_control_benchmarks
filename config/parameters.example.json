@@ -1,0 +1,14 @@
+{
+  "RUN_ID": "assigned-by-prepare",
+  "visit_date": "REPLACE-WITH-FUTURE-YYYY-MM-DD",
+  "travel_date": "REPLACE-WITH-FUTURE-YYYY-MM-DD",
+  "DATE_AT_TIME": "REPLACE-WITH-FUTURE-DATE-TIME-AND-TIMEZONE",
+  "device_a": "test-phone-A",
+  "device_b": "test-phone-B",
+  "music_app": "REPLACE-WITH-INSTALLED-MUSIC-APP",
+  "museum_a": "REPLACE-WITH-MUSEUM-NAME-AND-OFFICIAL-URL",
+  "museum_b": "REPLACE-WITH-MUSEUM-NAME-AND-OFFICIAL-URL",
+  "hotel": "REPLACE-WITH-SPECIFIC-TEST-HOTEL",
+  "fixture_url": "REPLACE-WITH-PHONE-ACCESSIBLE-TEST-URL",
+  "calendar_event_attachment": "calendar-event.txt"
+}
