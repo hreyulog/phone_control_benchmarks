@@ -1,5 +1,5 @@
 {
-  "name": "benchmarks4phone-control-tasks",
+  "name": "phone-control-benchmarks",
   "version": "1.0.0",
   "private": true,
   "description": "100 evidence-backed phone-control scenarios, portable agent handoff and scoring",

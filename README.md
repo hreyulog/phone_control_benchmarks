@@ -1,4 +1,4 @@
-# benchmarks4phone_control_tasks
+# phone_control_benchmarks
 
 100 个可执行、可独立验收、可打分的手机控制用户场景。默认测试 **Sofia 普通聊天 → 手机内 Agent**，也可以记录其他手机控制 Agent 的运行路径。
 
@@ -11,8 +11,8 @@
 先读 [AGENTS.md](AGENTS.md)。克隆后运行：
 
 ```sh
-git clone https://github.com/hreyulog/benchmarks4phone_control_tasks.git
-cd benchmarks4phone_control_tasks
+git clone https://github.com/hreyulog/phone_control_benchmarks.git
+cd phone_control_benchmarks
 node bin/bench.cjs doctor
 node --test tests/benchmark.test.cjs
 node bin/bench.cjs list --batch smoke
