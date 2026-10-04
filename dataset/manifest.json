@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "task_count": 100,
   "files": [
     {
       "file": "dataset/tasks.json",
-      "sha256": "ef0bc8012f4e088b5ddb0802ce9e9586fb2a8cb638d027d52f7be8768c57d213"
+      "sha256": "ed4e76f4d2d913860da40e249340038c175918558eff36a1e19ac4ef560b5537"
     },
     {
       "file": "dataset/rubric.json",
-      "sha256": "17fa123d04fe928314cdd0eae6c550b03bdd97588c5225600498f8c84a963611"
+      "sha256": "96153bf7183f313b32902ebfa04dff15945bb91a32dd0ea7134c9708d5f7b2d4"
     },
     {
       "file": "fixtures/calendar-event.template.txt",

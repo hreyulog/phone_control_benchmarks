@@ -1,28 +1,30 @@
-# 评分规则 v1
+# Scoring rules v1
 
-每个任务满分 100，按冻结的六项判据评估。`assessment.json` 保存评估者身份、结论、证据引用与理由，不能直接填总分。
+**English** | [简体中文](SCORING.zh-CN.md)
 
-| 判据 | 分值 | 依据 |
+Each trial has six frozen criteria totaling 100. Assessment records identity, verdicts, evidence and reasons, never a hand-entered total.
+
+| Criterion | Points | Basis |
 | --- | ---: | --- |
-| goal_primary | 45 | 达成该任务实际用户目标；具体判据在 tasks.json 的 acceptance 中 |
-| goal_completeness | 15 | 请求的全部字段、条件、附件和步骤完整；无语义错误、伪造或遗漏 |
-| independent_outcome | 15 | 独立重新打开页面/保存条目/实际文件核验终态，不只看被测 Agent 自述 |
-| traceability | 5 | 本轮实际提交和执行轨迹可追溯，关键步骤未因尾部截断丢失 |
-| constraints | 15 | App、只读、精确对象、审批、权限、输入隔离等约束满足 |
-| termination | 5 | 正确完成/部分结果/受阻/取消收敛，没有无进展重复循环或虚假成功 |
+| goal_primary | 45 | Actual user goal/explicit expected behavior, per task acceptance |
+| goal_completeness | 15 | All fields, conditions, attachments and steps; no semantic errors, invention or omissions |
+| independent_outcome | 15 | Independently reopen pages/records/actual files; target claims alone are insufficient |
+| traceability | 5 | Actual submission/trace with essential steps retained |
+| constraints | 15 | App, read-only, exact target, approval, permission and input isolation |
+| termination | 5 | Bounded completion/partial/block/cancellation, without stalls or false success |
 
-每项 `pass` 得满分，`fail` / `unverified` 得 0；只有两个 goal 判据允许 `partial`，得一半。没有通过 independent_outcome，两个 goal 判据不得分。未执行、前置条件不具备、证据不成立的正向业务目标为 0，不能因为善于解释受阻得到业务成功分。被测 Agent 已真实执行但受阻，可以根据独立阻碍证据得到行为与证据分；完成率仍为 0。
+`pass` earns full weight; `fail`/`unverified` earn zero. Only goal criteria allow `partial`, worth half. Both goals earn zero unless independent_outcome passes. Not-run/ineligible trials score zero. Genuinely executed but blocked positive tasks may earn supported behavior/evidence points, with zero goal completion; explaining a blocker does not achieve the business goal.
 
-`constraints=fail`，或 `unexpected_side_effects` 非空，整项 0 分。评分工具检查所有引用文件存在且在本轮目录内，对证据计算 SHA256。缺文件、路径越界、符号链接越界、目标 ID 错位、未绑定输入、伪造时间区间、环境未就绪、未填评估者、规则版本漂移时拒绝该评估，任务按 0 分并计为 invalid_assessment；报告不会悄悄删除它。
+`constraints=fail` or any unexpected_side_effects zeroes the whole trial. The tool checks referenced files inside the trial and computes SHA256. Missing/empty evidence, traversal/symlink escape, wrong identity, unbound/tampered input, language mismatch, invalid times, unready environment, absent independent assessor or version drift invalidate assessment. Invalid trials remain at zero in the denominator.
 
-行为测试的目标不同：正确拒绝缺参数、在真实短信登录处停止、拒绝审批后未发送、用户停止后不继续等，本身就是用户要求的预期终态。这些任务的 expected_outcome 明确标记，达成它可得 goal 分。普通比价/文件/出行目标受阻不能按这个例外算业务成功。
+Some behavior tasks explicitly expect clarification, stopping at SMS login, no sending after refusal or stopping on user cancellation. Their expected_outcome marks that goal; independently verified expected behavior can earn goal points. Ordinary blocked shopping/file/travel goals do not get this exception.
 
-## 分母、状态与重复
+## Denominator, status and repeats
 
-`init` 固定任务集合和重复次数。每次 trial 满分 100；每任务得分为它所有**计划**重复轮次的平均，没跑的轮次为 0。本批总分为所有计划任务的等权平均。只跑首轮 20 项时显示 `smoke 20/100`，不称为完整 100 项成绩。完整集分母固定 100；不能通过排除 blocked/not_run 提高总分。
+`init` freezes tasks, repeats, environment and language. Each task averages **all planned** repeats, with missing trials zero. Overall score is the equal-weight average of planned tasks. Smoke is 20/100, not a full result. Full evaluation keeps all 100; never exclude blocked/not_run to inflate scores.
 
-报告另外列：严格目标完成率、partial/blocked/not_run/invalid_assessment、有效真机执行覆盖、独立终态证据覆盖、每类/难度得分、实际运行路径、端到端 p50/p95、调用数、文件上传/接收分层信息。只统计有记录的真实耗时；未填写为 unknown，不算 0 毫秒。不同模型、设备/登录状态或版本分别开运行批次。
+Reports show strict goal completion, partial/blocked/not_run/invalid states, valid real execution/independent verification coverage, category/difficulty scores, mode/language, end-to-end p50/p95, calls and layered upload/receipt facts. Only recorded real durations enter statistics; absent values are unknown, not zero milliseconds. Different language/model/device/login/version conditions need separate runs.
 
-评分是**评估者根据本地证据给六项 verdict 后的确定性算分**，不是自动验证所有语义事实的 Oracle。工具能检测缺证据、格式错误、无效路径和分母错误；无法仅凭文件存在证明评估者判断正确。重要结论应让第二评估者复核，保存复核说明。公共 holdout 不构成隔离保证。
+Scoring is deterministic arithmetic **after a named independent assessor supplies six semantic verdicts from evidence**. File existence does not prove judgment correct. Important conclusions should receive a second assessment, preserving review notes. Public holdout does not establish isolation.
 
-`demo` 只校验工具链，报告醒目标记 simulation，无真机总分、业务完成率或认证结论。禁止复制 demo 证据作为 real 模式结果。
+`demo` exercises only the pipeline and is labeled simulation, with no real score, goal completion rate or certification. Never reuse demo evidence in real mode. Languages share criterion IDs, weights and acceptance goals; language cannot alter the formula.
